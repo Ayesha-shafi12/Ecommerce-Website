@@ -41,7 +41,7 @@ const Collection = () => {
             Shop by <span className="text-blue-600">Collection</span>
           </h2>
           <p className="text-gray-500 mt-2">
-            Explore our hand-picked collections — curated for every style.
+            Explore our hand-picked collections curated for every style.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">

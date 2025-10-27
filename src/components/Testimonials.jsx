@@ -1,5 +1,4 @@
 import { Star } from "lucide-react";
-console.log("Lucide React Loaded ✅");
 
 const Testimonials = () => {
   const reviews = [
@@ -29,7 +28,6 @@ const Testimonials = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">
             What Our <span className="text-blue-600">Customers Say</span>

@@ -13,7 +13,7 @@ const Header = () => {
           Discover the Latest <span className="text-yellow-400">Trends</span>
         </h1>
         <p className="text-lg md:text-xl mb-8 text-gray-100">
-          Shop electronics, fashion, accessories and more — all in one place.
+          Shop electronics, fashion, accessories and more all in one place.
         </p>
 
         <div className="flex flex-col md:flex-row items-center gap-4 bg-white rounded-full shadow-lg overflow-hidden p-2 md:p-3 max-w-2xl mx-auto md:mx-0">

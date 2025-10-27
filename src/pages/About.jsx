@@ -19,9 +19,9 @@ const About = () => {
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               At <span className="font-semibold text-blue-700">Trend.pk</span>,
-              we’re dedicated to delivering a modern, seamless, and enjoyable
-              shopping experience. From fashion to lifestyle and tech — every
-              product is hand-picked to match your quality expectations.
+              we're dedicated to delivering a modern, seamless, and enjoyable
+              shopping experience. From fashion to lifestyle and tech every
+              product is hand picked to match your quality expectations.
             </p>
 
             <p className="text-gray-600 leading-relaxed mb-6">
@@ -32,7 +32,7 @@ const About = () => {
 
             <p className="text-gray-600 leading-relaxed">
               Whether you're upgrading your wardrobe, buying gadgets, or
-              exploring new trends, Trend.pk has you covered — with{" "}
+              exploring new trends, Trend.pk has you covered with{" "}
               <span className="font-semibold text-blue-700">
                 style, quality,
               </span>{" "}
@@ -52,7 +52,7 @@ const About = () => {
           <h3 className="text-2xl font-bold text-gray-800 mb-3">Our Mission</h3>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
             To redefine online shopping in Pakistan with reliability,
-            affordability, and innovation — while ensuring our customers feel
+            affordability, and innovation while ensuring our customers feel
             confident and excited with every purchase.
           </p>
         </div>

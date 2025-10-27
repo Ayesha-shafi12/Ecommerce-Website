@@ -5,12 +5,12 @@ const OfferBanner = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
-            Mega <span className="text-yellow-400">Sale</span> — Up to{" "}
+            Mega <span className="text-yellow-400">Sale</span>Up to{" "}
             <span className="text-yellow-300">50% OFF!</span>
           </h2>
           <p className="mt-4 text-lg text-gray-100">
-            Grab your favorite products at unbeatable prices. Limited-time offer
-            — don’t miss out!
+            Grab your favorite products at unbeatable prices. Limited time offer
+            don't miss out!
           </p>
           <button className="mt-6 bg-yellow-400 text-blue-800 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition duration-300">
             Shop Now
