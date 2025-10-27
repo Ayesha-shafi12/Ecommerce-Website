@@ -4,12 +4,11 @@ import { assets } from "../assets/assets_frontend/assets.js";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [showMenu, setShowMenu] = useState(false);
+  const [setShowMenu] = useState(false);
   const [token, setToken] = useState(true);
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
-  // ✅ Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -23,7 +22,6 @@ const Navbar = () => {
   return (
     <div className="bg-gradient-to-r from-blue-600 to-indigo-700 shadow-md text-white relative z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6 md:px-12">
-        {/* 🛍️ Store Name / Logo */}
         <h1
           onClick={() => navigate("/")}
           className="text-3xl font-extrabold tracking-wide cursor-pointer"
@@ -31,7 +29,6 @@ const Navbar = () => {
           <span className="text-yellow-400">Trend</span>.pk
         </h1>
 
-        {/* 🧭 Navigation Links */}
         <ul className="hidden md:flex items-center gap-8 font-medium">
           <li>
             <NavLink
@@ -90,8 +87,6 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-
-        {/* 👤 Login / Profile */}
         <div className="flex items-center gap-4 relative">
           {token ? (
             <div className="relative" ref={dropdownRef}>
@@ -113,7 +108,6 @@ const Navbar = () => {
                 />
               </div>
 
-              {/* Dropdown Menu */}
               {showDropdown && (
                 <div className="absolute top-12 right-0 bg-white text-gray-800 rounded-md shadow-lg flex flex-col gap-3 p-4 w-48 z-50">
                   <p
