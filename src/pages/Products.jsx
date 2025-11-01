@@ -3,7 +3,11 @@ import Electronic from "../assets/assets_frontend/Electronic.jpg";
 import menwatch from "../assets/assets_frontend/menwatch.jpg";
 import skincare from "../assets/assets_frontend/skincare.jpg";
 import tech from "../assets/assets_frontend/tech.jpg";
+import { useCart } from "../contexts/CartContext";
+
 const Products = () => {
+  const { addToCart } = useCart();
+
   const [products] = useState([
     {
       id: 1,
@@ -14,7 +18,7 @@ const Products = () => {
     },
     {
       id: 2,
-      name: "Men sneekers",
+      name: "Men Sneakers",
       price: 18000,
       img: "https://img.freepik.com/free-photo/pair-trainers_144627-3799.jpg",
       category: "Men",
@@ -83,7 +87,10 @@ const Products = () => {
                 <p className="text-gray-500 mt-1">
                   Rs {item.price.toLocaleString()}
                 </p>
-                <button className="mt-4 w-full bg-yellow-400 text-blue-900 font-semibold py-2 rounded-lg hover:bg-yellow-300 transition duration-200">
+                <button
+                  onClick={() => addToCart(item)}
+                  className="mt-4 w-full bg-yellow-400 text-blue-900 font-semibold py-2 rounded-lg hover:bg-yellow-300 transition duration-200"
+                >
                   Add to Cart
                 </button>
               </div>

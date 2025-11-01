@@ -2,22 +2,29 @@ import beauty from "../assets/assets_frontend/beauty.png";
 
 const Header = () => {
   return (
-    <div className="relative bg-gradient-to-r from-indigo-700 to-blue-600 text-white py-12 overflow-hidden">
+    <header className="relative bg-gradient-to-r from-indigo-700 to-blue-600 text-white py-16 sm:py-20 overflow-hidden">
+      {/* Background image overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{ backgroundImage: `url(${beauty})` }}
       ></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center md:text-left">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+      {/* Content container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 flex flex-col items-center md:items-start text-center md:text-left">
+        {/* Headline */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4 leading-tight">
           Discover the Latest <span className="text-yellow-400">Trends</span>
         </h1>
-        <p className="text-lg md:text-xl mb-8 text-gray-100">
-          Shop electronics, fashion, accessories and more all in one place.
+
+        {/* Subheadline */}
+        <p className="text-sm sm:text-base md:text-lg mb-8 text-gray-100 max-w-2xl">
+          Shop electronics, fashion, accessories, and more — all in one place.
         </p>
 
-        <div className="flex flex-col md:flex-row items-center gap-4 bg-white rounded-full shadow-lg overflow-hidden p-2 md:p-3 max-w-2xl mx-auto md:mx-0">
-          <select className="text-gray-700 bg-gray-100 px-4 py-2 rounded-full outline-none text-sm font-medium">
+        {/* Search bar */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 bg-white rounded-2xl shadow-lg overflow-hidden p-3 w-full sm:max-w-2xl md:max-w-xl lg:max-w-2xl">
+          {/* Category selector */}
+          <select className="text-gray-700 bg-gray-100 px-4 py-2 rounded-md outline-none text-sm font-medium w-full sm:w-auto">
             <option>All Categories</option>
             <option>Electronics</option>
             <option>Fashion</option>
@@ -25,17 +32,20 @@ const Header = () => {
             <option>Home & Living</option>
           </select>
 
+          {/* Search input */}
           <input
             type="text"
             placeholder="Search for products..."
-            className="flex-grow px-4 py-2 outline-none text-gray-700 text-sm"
+            className="flex-grow px-4 py-2 rounded-md outline-none text-gray-700 text-sm w-full"
           />
-          <button className="bg-yellow-400 text-blue-800 px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition duration-300">
+
+          {/* Search button */}
+          <button className="bg-yellow-400 text-blue-800 px-6 py-2 rounded-md font-semibold hover:bg-yellow-300 transition duration-300 w-full sm:w-auto">
             Search
           </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
