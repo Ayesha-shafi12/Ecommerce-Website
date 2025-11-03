@@ -71,7 +71,6 @@ const Cart = () => {
         ))}
       </div>
 
-      {/* Bottom total + clear button */}
       <div className="flex flex-col sm:flex-row justify-between items-center mt-8 border-t pt-4 gap-4">
         <button
           onClick={clearCart}

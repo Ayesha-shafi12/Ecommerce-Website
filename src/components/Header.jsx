@@ -28,7 +28,7 @@ const Header = ({ onSearchChange, onCategoryChange }) => {
         </h1>
 
         <p className="text-sm sm:text-base md:text-lg mb-8 text-gray-100 max-w-2xl">
-          Shop electronics, fashion, accessories, and more — all in one place.
+          Shop electronics, fashion, accessories, and more all in one place.
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 bg-white rounded-2xl shadow-2xl p-4 w-full sm:max-w-2xl md:max-w-xl lg:max-w-2xl border border-gray-200">
