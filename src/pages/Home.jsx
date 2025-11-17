@@ -17,10 +17,7 @@ const Home = () => {
       />
 
       <Collection />
-      <FeaturedProducts
-        selectedCategory={selectedCategory}
-        searchTerm={searchTerm}
-      />
+      <FeaturedProducts />
       <OfferBanner />
       <Testimonials />
     </>

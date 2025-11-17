@@ -1,29 +1,15 @@
 import { Star } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Testimonials = () => {
-  const reviews = [
-    {
-      name: "Ayesha Khan",
-      review:
-        "Amazing quality and super fast delivery! The products are exactly as shown. Definitely shopping again!",
-      img: "https://randomuser.me/api/portraits/women/65.jpg",
-      rating: 5,
-    },
-    {
-      name: "Ali Raza",
-      review:
-        "Great service and packaging. The sneakers I ordered were perfect and very comfortable!",
-      img: "https://randomuser.me/api/portraits/men/75.jpg",
-      rating: 4,
-    },
-    {
-      name: "Sara Malik",
-      review:
-        "Loved the beauty products! The prices are reasonable and the quality is excellent.",
-      img: "https://randomuser.me/api/portraits/women/45.jpg",
-      rating: 5,
-    },
-  ];
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/testimonial.json")
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+      .catch((err) => console.error("Error loading testimonials:", err));
+  }, []);
 
   return (
     <section className="py-16 bg-gray-50">
@@ -36,6 +22,7 @@ const Testimonials = () => {
             Real feedback from our valued customers.
           </p>
         </div>
+
         <div className="grid md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
             <div
@@ -50,6 +37,7 @@ const Testimonials = () => {
                 />
                 <div>
                   <h3 className="font-semibold text-gray-800">{review.name}</h3>
+
                   <div className="flex text-yellow-400">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} size={18} fill="currentColor" />
@@ -57,6 +45,7 @@ const Testimonials = () => {
                   </div>
                 </div>
               </div>
+
               <p className="text-gray-600 text-sm leading-relaxed">
                 “{review.review}”
               </p>

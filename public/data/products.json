@@ -1,0 +1,37 @@
+[
+  {
+    "id": 101,
+    "name": "Wireless Earbuds",
+    "price": 4999,
+    "img": "tech",
+    "category": "Electronics"
+  },
+  {
+    "id": 102,
+    "name": "Smart Watch",
+    "price": 7499,
+    "img": "Electronic",
+    "category": "Electronics"
+  },
+  {
+    "id": 103,
+    "name": "Men’s Sneakers",
+    "price": 5999,
+    "img": "https://img.freepik.com/free-photo/pair-trainers_144627-3799.jpg",
+    "category": "Fashion"
+  },
+  {
+    "id": 104,
+    "name": "Women’s Handbag",
+    "price": 6499,
+    "img": "girls_sho",
+    "category": "Fashion"
+  },
+  {
+    "id": 105,
+    "name": "Bluetooth Speaker",
+    "price": 3999,
+    "img": "https://img.freepik.com/free-photo/portable-bluetooth-speaker_53876-104058.jpg",
+    "category": "Electronics"
+  }
+]

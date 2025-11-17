@@ -1,0 +1,10 @@
+[
+  { "title": "Men's Collection", "img": "Collection_boys" },
+  { "title": "Women's Collection", "img": "girls_sho" },
+  { "title": "Gadgets & Tech", "img": "Electronic" },
+  {
+    "title": "Beauty & Self Care",
+    "img": "https://img.freepik.com/premium-photo/makeup-accessories-beauty-products_93675-124760.jpg"
+  },
+  { "title": "Sports & Fitness", "img": "sports" }
+]

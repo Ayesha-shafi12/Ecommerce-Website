@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ayesha Khan",
+    "review": "Amazing quality and super fast delivery! The products were exactly as described and arrived in perfect condition. I really appreciate the attention to detail and customer service. Definitely shopping again soon!",
+    "img": "https://randomuser.me/api/portraits/women/65.jpg",
+    "rating": 5
+  },
+  {
+    "name": "Ali Raza",
+    "review": "Great service and packaging. The sneakers I ordered fit perfectly and feel extremely comfortable. The shipping was fast and the product quality exceeded my expectations. Highly recommended for everyone!",
+    "img": "https://randomuser.me/api/portraits/men/75.jpg",
+    "rating": 4
+  },
+  {
+    "name": "Sara Malik",
+    "review": "Loved the beauty products! The quality is excellent, and the prices are reasonable. Everything arrived on time, and the packaging was really neat. I will definitely be purchasing more from this store.",
+    "img": "https://randomuser.me/api/portraits/women/45.jpg",
+    "rating": 5
+  }
+]
