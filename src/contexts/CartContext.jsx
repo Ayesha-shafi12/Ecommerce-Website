@@ -1,65 +1,107 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
-const CartContext = createContext();
+const CartContext = createContext(null);
+
+const getInitialCart = () => {
+  try {
+    const saved = localStorage.getItem("trend-cart");
+    return saved ? JSON.parse(saved) : [];
+  } catch {
+    return [];
+  }
+};
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(getInitialCart);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  useEffect(() => {
+    localStorage.setItem("trend-cart", JSON.stringify(cartItems));
+  }, [cartItems]);
+
   const addToCart = (product) => {
-    const existingItem = cartItems.find((item) => item.id === product.id);
-    if (existingItem) {
-      setCartItems((prev) =>
-        prev.map((item) =>
+    setCartItems((current) => {
+      const existing = current.find((item) => item.id === product.id);
+
+      if (existing) {
+        return current.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCartItems((prev) => [...prev, { ...product, quantity: 1 }]);
-    }
+            : item,
+        );
+      }
 
-    setIsCartOpen(true);
-  };
-
-  const removeFromCart = (id) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+      return [
+        ...current,
+        {
+          ...product,
+          quantity: 1,
+        },
+      ];
+    });
   };
 
   const increaseQty = (id) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
+    setCartItems((current) =>
+      current.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
     );
   };
 
   const decreaseQty = (id) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
+    setCartItems((current) =>
+      current
+        .map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item,
+        )
+        .filter((item) => item.quantity > 0),
     );
   };
 
-  const clearCart = () => setCartItems([]);
+  const removeFromCart = (id) => {
+    setCartItems((current) => current.filter((item) => item.id !== id));
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   const openCart = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
+
+  const cartCount = useMemo(
+    () => cartItems.reduce((total, item) => total + item.quantity, 0),
+    [cartItems],
+  );
+
+  const subtotal = useMemo(
+    () =>
+      cartItems.reduce(
+        (total, item) => total + Number(item.price) * item.quantity,
+        0,
+      ),
+    [cartItems],
+  );
+
+  const shipping = subtotal === 0 || subtotal >= 5000 ? 0 : 250;
+
+  const total = subtotal + shipping;
 
   return (
     <CartContext.Provider
       value={{
         cartItems,
+        cartCount,
+        subtotal,
+        shipping,
+        total,
+        isCartOpen,
         addToCart,
-        removeFromCart,
         increaseQty,
         decreaseQty,
+        removeFromCart,
         clearCart,
-        isCartOpen,
         openCart,
         closeCart,
       }}
@@ -69,5 +111,12 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const useCart = () => useContext(CartContext);
+export const useCart = () => {
+  const context = useContext(CartContext);
+
+  if (!context) {
+    throw new Error("useCart must be used inside CartProvider");
+  }
+
+  return context;
+};

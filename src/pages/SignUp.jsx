@@ -1,9 +1,16 @@
-import { SignUp } from "@clerk/clerk-react";
+import { SignUp } from "@clerk/react-router";
 
-export default function SignUpPage() {
+const SignUpPage = () => {
   return (
-    <div className="flex justify-center py-10">
-      <SignUp routing="path" path="/sign-up" />
-    </div>
+    <section className="flex min-h-[70vh] items-center justify-center bg-gray-50 px-4 py-12">
+      <SignUp
+        routing="path"
+        path="/signup"
+        fallbackRedirectUrl="/"
+        signInUrl="/signin"
+      />
+    </section>
   );
-}
+};
+
+export default SignUpPage;
